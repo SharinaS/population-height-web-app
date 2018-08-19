@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title> Data Collector App</title>
+  <head>
+    <link href="../static/main.css" rel="stylesheet">
+  </head>
+    <body>
+      <div class="container">
+        <h1>Average Height</h1>
+        <h3>Please submit your height to get population statistics on height</h3>
+        <div class="message">
+          {{text | safe}}
+        </div>
+        <form action="{{url_for('success')}}" method="POST">  
+          <input title="Your email will safe with us" placeholder="Enter your email address" type="email" name="email_name" required> <br>
+          <input title="Your data will safe with us" placeholder="Enter your height in inches" type="number" min="20", max="100" name="height_name" required> <br>
+          <button type="submit">Submit</button>
+        </form>
+        <p id="safe">Your email is safe. We promise not to use it for anything else than to send you the one email that lets you know how you compare against those who have already submitted their height</p>
+      </div>
+    </body>
+  <footer id="built">Site built and maintained by Sharina Stubbs, 2018.</footer>
+</html>
